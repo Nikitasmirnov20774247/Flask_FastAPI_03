@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block title %} Home {% endblock %} {% block content %}
+<div class="welcome-name center">{% if message %}
+    <h1>{{ message }}</h1>
+    {% endif %} {% if session.user %}
+    <h1>Welcome {{ session.user }}</h1>
+    <a href="{{ url_for('logout') }}">Logout</a> {% else %}
+    <div class="welcome-choice">
+        <a href="{{ url_for('registration') }}">Registration</a>
+        <a href="{{ url_for('login') }}">Login</a> {% endif %} {% endblock %}
+    </div>
+</div>
